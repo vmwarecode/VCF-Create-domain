@@ -1,0 +1,92 @@
+{
+  "domainName" : "Domain1",
+  "vcenterSpec" : {
+    "name" : "vCenter1",
+    "networkDetailsSpec" : {
+      "ipAddress" : "10.0.0.43",
+      "dnsName" : "vcenter-2.sfo01.rainpole.local",
+      "gateway" : "10.0.0.250",
+      "subnetMask" : "255.255.255.0"
+    },
+    "rootPassword" : "Random0$",
+    "datacenterName" : "new-vi-1"
+  },
+  "computeSpec" : {
+    "clusterSpecs" : [ {
+      "name" : "Cluster1",
+      "hostSpecs" : [ {
+        "id" : "0940664d-733e-4207-baca-6d037f83fd1b",
+        "hostNetworkSpec" : {
+          "vmNics" : [ {
+            "id" : "vmNicId1",
+            "vdsName" : "SDDC-Dswitch-Private1"
+          } ]
+        }
+      }, {
+        "id" : "bac278cd-94ec-44f7-9b0d-c99fff12e624",
+        "hostNetworkSpec" : {
+          "vmNics" : [ {
+            "id" : "vmNicId1",
+            "vdsName" : "SDDC-Dswitch-Private1"
+          } ]
+        }
+      }, {
+        "id" : "a130479c-49fc-4ecd-85ad-569132f285d0",
+        "hostNetworkSpec" : {
+          "vmNics" : [ {
+            "id" : "vmNicId1",
+            "vdsName" : "SDDC-Dswitch-Private1"
+          } ]
+        }
+      } ],
+      "datastoreSpec" : {
+        "vsanDatastoreSpec" : {
+          "failuresToTolerate" : 1,
+          "licenseKey" : "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
+          "datastoreName" : "vSanDatastore"
+        }
+      },
+      "networkSpec" : {
+        "vdsSpecs" : [ {
+          "name" : "SDDC-Dswitch-Private1",
+          "portGroupSpecs" : [ {
+            "name" : "SDDC-DPortGroup-Mgmt",
+            "transportType" : "MANAGEMENT"
+          }, {
+            "name" : "SDDC-DPortGroup-VSAN",
+            "transportType" : "VSAN"
+          }, {
+            "name" : "SDDC-DPortGroup-vMotion",
+            "transportType" : "VMOTION"
+          } ]
+        } ],
+        "nsxClusterSpec" : {
+          "nsxVClusterSpec" : {
+            "vlanId" : 3,
+            "vdsNameForVxlanConfig" : "SDDC-Dswitch-Private1"
+          }
+        }
+      }
+    } ]
+  },
+  "nsxVSpec" : {
+    "nsxManagerSpec" : {
+      "name" : "nsx-manager-2",
+      "networkDetailsSpec" : {
+        "ipAddress" : "10.0.0.44",
+        "dnsName" : "nsx-manager-2.sfo01.rainpole.local",
+        "gateway" : "10.0.0.250",
+        "subnetMask" : "255.255.255.0"
+      }
+    },
+    "nsxVControllerSpec" : {
+      "nsxControllerIps" : [ "10.0.0.45", "10.0.0.46", "10.0.0.47" ],
+      "nsxControllerPassword" : "Test123456$%",
+      "nsxControllerGateway" : "10.0.0.250",
+      "nsxControllerSubnetMask" : "255.255.255.0"
+    },
+    "licenseKey" : "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
+    "nsxManagerAdminPassword" : "Random0$",
+    "nsxManagerEnablePassword" : "Random0$"
+  }
+}
