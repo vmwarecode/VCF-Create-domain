@@ -249,7 +249,9 @@ A DHCP server must be configured on the VXLAN VLAN of the management domain. Whe
 
 Ensure that host configuration has a minimum of two active vmNics. There must be a free uplink on each host to be used for the domain.
 
+
+Sample specification file "domain_creation_spec.json" will be used for domain creation operation. So fill the required details and validate before executing the script.
+For more information on the provided sample file, please refer to API reference documentation.
+
 Usage:
     python create_domain.py <hostname> <username> <password>
-
-Note: The sample_create_domain_spec file should be configured.
