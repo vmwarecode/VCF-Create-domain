@@ -1,6 +1,28 @@
-Create Domain:
+INTRODUCTION:
+------------
 
-prerequisites:
+This module contains script files to create a domain.
+
+
+REQUIREMENTS:
+------------
+
+This module requires the following modules:
+
+ * Python 2.7.x
+   Libraries
+  * requests
+  * sys
+  * json
+  * time
+
+ * The scripts must be run outside sddc-manager environment.
+
+ * DNS resolution must be done for sddc-manager.
+
+
+PREREQUSITES:
+--------------
 
 The following data is required
 
@@ -235,23 +257,24 @@ For NFS
       "licenseKey" : "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
       "nsxManagerAdminPassword" : "Random0$"
     }
-WARNING
-NSX details (i.e "nsxVSpec" or "nsxTSpec") must match NSX cluster details (i.e "nsxVClusterSpec" or "nsxTClusterSpec") in the input specification.
-Network pool should be configured.
 
-TIP
-Refer to Create a Network Pool
-Hosts should be commissioned.
+  WARNING
+  NSX details (i.e "nsxVSpec" or "nsxTSpec") must match NSX cluster details (i.e "nsxVClusterSpec" or "nsxTClusterSpec") in the input specification.
+  Network pool should be configured.
+  TIP
+  Refer to Create a Network Pool
+  Hosts should be commissioned.
+  TIP
+  Refer to Commission the Hosts
+  A DHCP server must be configured on the VXLAN VLAN of the management domain. When NSX creates VXLAN VTEPs for the domain, they are assigned IP addresses from the DHCP server.
 
-TIP
-Refer to Commission the Hosts
-A DHCP server must be configured on the VXLAN VLAN of the management domain. When NSX creates VXLAN VTEPs for the domain, they are assigned IP addresses from the DHCP server.
+  Ensure that host configuration has a minimum of two active vmNics. There must be a free uplink on each host to be used for the domain.
 
-Ensure that host configuration has a minimum of two active vmNics. There must be a free uplink on each host to be used for the domain.
 
+USAGE:
+-----
 
 Sample specification file "domain_creation_spec.json" will be used for domain creation operation. So fill the required details and validate before executing the script.
 For more information on the provided sample file, please refer to API reference documentation.
 
-Usage:
-    python create_domain.py <hostname> <username> <password>
+Usage:  python create_domain.py <hostname> <username> <password>
