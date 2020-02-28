@@ -18,15 +18,23 @@
         "id" : "0940664d-733e-4207-baca-6d037f83fd1b",
         "hostNetworkSpec" : {
           "vmNics" : [ {
-            "id" : "vmNicId1",
+            "id" : "vmnic0",
             "vdsName" : "SDDC-Dswitch-Private1"
+          },
+          {
+              "id" : "vmnic1",
+              "vdsName" : "SDDC-Dswitch-Private1"
           } ]
         }
       }, {
         "id" : "bac278cd-94ec-44f7-9b0d-c99fff12e624",
         "hostNetworkSpec" : {
           "vmNics" : [ {
-            "id" : "vmNicId1",
+            "id" : "vmnic0",
+            "vdsName" : "SDDC-Dswitch-Private1"
+          },
+          {
+            "id" : "vmnic1",
             "vdsName" : "SDDC-Dswitch-Private1"
           } ]
         }
@@ -34,7 +42,11 @@
         "id" : "a130479c-49fc-4ecd-85ad-569132f285d0",
         "hostNetworkSpec" : {
           "vmNics" : [ {
-            "id" : "vmNicId1",
+            "id" : "vmnic0",
+            "vdsName" : "SDDC-Dswitch-Private1"
+          },
+          {
+            "id" : "vmnic1",
             "vdsName" : "SDDC-Dswitch-Private1"
           } ]
         }
